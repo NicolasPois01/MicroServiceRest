@@ -1,10 +1,29 @@
 package com.example.restapi.entities;
 
-public class Flight {
+import java.io.Serializable;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+
+@XmlRootElement(name="flight")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Flight implements Serializable {
+    @XmlAttribute(name="identifier")
     private int identifier;
+
+    @XmlElement(name="company")
     private Company company;
+
+    @XmlElement(name="seat")
     private Seat seat;
+    
+    @XmlElement(name="date")
     private Date date;
+
+    public Flight() {
+    }
 
     public Flight(int identifier, Company company, Seat seat, Date date) {
         this.identifier=identifier;

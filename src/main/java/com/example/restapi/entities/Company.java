@@ -1,8 +1,22 @@
 package com.example.restapi.entities;
 
-public class Company {
+import java.io.Serializable;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+
+@XmlRootElement(name="company")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Company implements Serializable {
+    @XmlAttribute(name="identifier")
     private int identifier;
+
+    @XmlAttribute(name="name")
     private String name;
+
+    public Company() {
+    }
 
     public Company(int identifier, String name) {
         this.identifier=identifier;

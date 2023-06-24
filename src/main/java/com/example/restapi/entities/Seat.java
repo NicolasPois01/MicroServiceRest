@@ -1,10 +1,25 @@
 package com.example.restapi.entities;
 
-public class Seat {
-    private int identifier;
-    private String placeName;
+import java.io.Serializable;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessorType;
 
-    public Seat(int identifier, String placeName) {
+@XmlRootElement(name="seat")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Seat implements Serializable{
+
+    @XmlAttribute(name="identifier")
+    private int identifier;
+
+    @XmlAttribute(name="place_name")
+    private String place_name;
+
+    public Seat() {
+    }
+
+    public Seat(int identifier, String place_name) {
         this.identifier=identifier;
     }
 
@@ -17,11 +32,11 @@ public class Seat {
     }
 
     public String getPlaceName() {
-        return placeName;
+        return place_name;
     }
 
-    public void setPlaceName(String placeName) {
-        this.placeName=placeName;
+    public void setPlaceName(String place_name) {
+        this.place_name=place_name;
     }
 
 }
