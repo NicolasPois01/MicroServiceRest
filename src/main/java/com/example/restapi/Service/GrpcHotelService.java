@@ -1,6 +1,6 @@
 package com.example.restapi.Service;
 
-import com.example.restapi.Configuration.GrpcConfig;
+import com.example.restapi.configuration.GrpcConfig;
 import com.example.restapi.grpc.GetBookedGrpc;
 import com.example.restapi.grpc.HotelService;
 import com.google.protobuf.Field;
